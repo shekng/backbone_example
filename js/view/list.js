@@ -18,7 +18,7 @@ function($, _, Backbone, ItemView){
         render: function() {
             var me = this;
             this.collection.each(function(user) {
-                var userView = new ItemView({model: user});
+                var userView = new ItemView({collection: me.collection, model: user});
                 me.$el.append(userView.render().el);
             });
             
